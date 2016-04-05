@@ -5,20 +5,19 @@
 
 int main(void)
 {
+	int i = 0;
+
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
-	TIM_TimeBaseInitTypeDef PWM;
-	TIM_TimeBaseStructInit(&PWM);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE);
+
 	TIM_OCInitTypeDef OCR;
 	OCR.TIM_OCMode = TIM_OCMode_PWM1;
 	OCR.TIM_OutputState = TIM_OutputState_Enable;
 	OCR.TIM_OCPolarity = TIM_OCPolarity_High;
+	OCR.TIM_Pulse = 0;
+	TIM_OC1Init(TIM4,&OCR);
 	TIM_Cmd(TIM4,ENABLE);
 	TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);
-
-	int i = 0;
-
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE);
 
 	GPIO_InitTypeDef PIN;
 
@@ -37,14 +36,12 @@ int main(void)
     {
     	for(i=0;i<5;i++)
     	{
-    		OCR.TIM_Pulse = i*13107;
-    		TIM_OC1Init(TIM4,&OCR);
+    		TIM_SetCompare1(TIM4,i*13107);
     		for(i=0;i<500000;i++);
     	}
     	for(i=4;i>=0;i--)
     	{
-    	    OCR.TIM_Pulse = i*13107;
-    	    TIM_OC1Init(TIM4,&OCR);
+    		TIM_SetCompare1(TIM4,i*13107);
     	    for(i=0;i<500000;i++);
     	}
     }
