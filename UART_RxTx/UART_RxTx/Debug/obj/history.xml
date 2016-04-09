@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\UART_RxTx\cmsis_lib -I..\..\..\workspace -I..\..\..\workspace\UART_RxTx\cmsis_lib\include -I..\..\..\workspace\UART_RxTx\cmsis_boot -I..\..\..\workspace\UART_RxTx -I..\..\..\workspace\UART_RxTx\cmsis">
+      <target file="stm32f4xx_rcc.o" lastModified="153f78f139f">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="153f7647999"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="153f78f15ab">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="153f763f260"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="153f78f14bf">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="153f76535a4"/>
+      </target>
+      <target file="main.o" lastModified="153fa5c3f24">
+         <source file="..\..\..\main.c" lastModified="153fa5c395b"/>
+      </target>
+      <target file="syscalls.o" lastModified="153f78f18b3">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="153f7641c19"/>
+      </target>
+      <target file="stm32f4xx_usart.o" lastModified="153f78f1094">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="153f764cd4f"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="153f78f1148">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="153f763f1fc"/>
+      </target>
+   </processor>
+</history>
